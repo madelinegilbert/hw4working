@@ -1,0 +1,209 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (15.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (5.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateMovies (20131107031651)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20131107031651')[0m
+  [1m[35m (6.0ms)[0m  commit transaction
+Migrating to CreateUsers (20141008230504)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar(255), "email" varchar(255), "session_token" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141008230504')[0m
+  [1m[35m (5.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-10-08 23:31:40 -0300
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (5.9ms)
+Compiled application.css  (0ms)  (pid 22039)
+Compiled jquery.js  (2ms)  (pid 22039)
+Compiled jquery_ujs.js  (0ms)  (pid 22039)
+Compiled sessions.js  (102ms)  (pid 22039)
+Compiled application.js  (130ms)  (pid 22039)
+Completed 200 OK in 290.3ms (Views: 235.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-08 23:31:41 -0300
+Served asset /application.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:41 -0300
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:41 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:41 -0300
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:41 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-10-08 23:31:43 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (15.1ms)
+Completed 200 OK in 19.2ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-08 23:31:43 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:43 -0300
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:43 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:43 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:43 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-10-08 23:31:46 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 10.4ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-08 23:31:46 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:46 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:46 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:46 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-08 23:31:56 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RJBPIzYJC1TFdV+p7T52WbD+j0o8e6m+vRPo8TEkpc0=", "user"=>{"user_id"=>"bkehl", "email"=>"bkehl@gmail.com"}, "commit"=>"Create my account"}
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."user_id" = 'bkehl' AND "users"."email" = 'bkehl@gmail.com' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (36.3ms)[0m  INSERT INTO "users" ("created_at", "email", "session_token", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 09 Oct 2014 02:31:56 UTC +00:00], ["email", "bkehl@gmail.com"], ["session_token", "hnvybZJIE8TblYqMX1FeKg=="], ["updated_at", Thu, 09 Oct 2014 02:31:56 UTC +00:00], ["user_id", "bkehl"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 156.5ms (ActiveRecord: 49.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-10-08 23:31:56 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 11.7ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-08 23:31:56 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:56 -0300
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:56 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:56 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-08 23:31:56 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/login_create" for 127.0.0.1 at 2014-10-08 23:32:06 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RJBPIzYJC1TFdV+p7T52WbD+j0o8e6m+vRPo8TEkpc0=", "user"=>{"user_id"=>"bkehl", "email"=>"bkehl@gmail.com"}, "commit"=>"Login to my account"}
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."user_id" = 'bkehl' AND "users"."email" = 'bkehl@gmail.com' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'bkehl' LIMIT 1[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 7.5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-10-08 23:32:06 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."session_token" = 'hnvybZJIE8TblYqMX1FeKg==' LIMIT 1
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 27.7ms (Views: 13.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-08 23:32:06 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-08 23:32:06 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-08 23:32:06 -0300
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-08 23:32:06 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-08 23:32:06 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-10-08 23:32:14 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RJBPIzYJC1TFdV+p7T52WbD+j0o8e6m+vRPo8TEkpc0="}
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 1.1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-10-08 23:32:14 -0300
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 23.2ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-08 23:32:14 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-08 23:32:14 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-08 23:32:14 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-08 23:32:14 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-08 23:32:14 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
